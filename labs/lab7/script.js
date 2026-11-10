@@ -1,6 +1,7 @@
 
 const ACCESS_KEY = "0mCxoxWujGefC4YiV8gm-WKmtbgcz6HyM8qR6F_jzN8";
 
+
 // Display images from Unsplash
 function displayImages(data) {
 
@@ -29,8 +30,13 @@ function displayImages(data) {
 // Method 1: XMLHttpRequest (XHR)
 function searchUsingXHR() {
 
-    var keyword = document.getElementById("inputBox").value;
+    var keyword = document.getElementById("inputBox").value.trim();
     var sampElem = document.getElementById("sampleOutput");
+
+    if (keyword === "") {
+        alert("Please enter a search keyword");
+        return;
+    }
 
     var xhr = new XMLHttpRequest();
 
@@ -69,8 +75,13 @@ function searchUsingXHR() {
 // Method 2: Fetch with Promises
 function searchUsingFetch() {
 
-    var keyword = document.getElementById("inputBox").value;
+    var keyword = document.getElementById("inputBox").value.trim();
     var sampElem = document.getElementById("sampleOutput");
+
+    if (keyword === "") {
+        alert("Please enter a search keyword");
+        return;
+    }
 
     fetch(
         "https://api.unsplash.com/search/photos?query=" +
@@ -108,8 +119,13 @@ function searchUsingFetch() {
 // Method 3: Fetch with Async/Await
 async function searchUsingFetchAwaitAsync() {
 
-    var keyword = document.getElementById("inputBox").value;
+    var keyword = document.getElementById("inputBox").value.trim();
     var sampElem = document.getElementById("sampleOutput");
+
+    if (keyword === "") {
+        alert("Please enter a search keyword");
+        return;
+    }
 
     try {
 
@@ -139,3 +155,13 @@ async function searchUsingFetchAwaitAsync() {
 
     }
 }
+
+
+// Keyboard Event: Search when pressing Enter
+document.getElementById("inputBox").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        searchUsingFetch();
+    }
+
+});
