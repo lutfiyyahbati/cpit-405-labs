@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7 - AJAX Programming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Lab 7</h1>
+
+    <h1>Asynchronous JavaScript (Ajax programming)</h1>
+
+    <h2>XMLHttpRequest, Fetch with Promises, and Fetch with Async/Await</h2>
+
+    <p>Create a web page that consumes the Unsplash API.</p>
+
+    <header>
+        <h3>Unsplash API</h3>
+
+        <input id="inputBox" value="Makkah" type="text"
+            placeholder="Enter image keyword">
+
+        <button onclick="searchUsingXHR()">Search using XHR</button>
+
+        <button onclick="searchUsingFetch()">Search using fetch (promises)</button>
+
+        <button onclick="searchUsingFetchAwaitAsync()">Search using fetch (async/await)</button>
+    </header>
+
+    <h2 id="title">Search Results</h2>
+
+    <div id="gallery"></div>
+
+    <h3 id="responseTitle">API Response:</h3>
+    <samp id="sampleOutput"></samp>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
